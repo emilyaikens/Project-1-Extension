@@ -1,0 +1,126 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    width: 100%;
+    min-height: 100vh;
+    text-align: center;
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 2px;
+    color: #4B4A54;
+    background-color: #E8F3F1;
+}
+h1 {
+    letter-spacing: 12px;
+    font-size: 45px;
+    margin: 30px 20px 10px 20px;
+    color: #677381;
+}
+#more-directions {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    margin: 0 auto;
+    width: 340px;
+    padding: 0px 0px 20px 0px;
+}
+.score-board {
+    border: solid #677381;
+    margin: 0 auto;
+    width: 230px;
+    background-color: #D9E5E0;
+}
+#time-left {
+    padding: 5px;
+}
+#matches {
+    padding: 0px 0px 5px 0px;
+}
+#directions {
+    padding: 20px 0px 5px 0px
+}
+.card {
+    width: 100px;
+    height: 100px;
+    transform-style: preserve-3d;
+    position: relative;
+    border: #677381 solid;
+}
+img {
+    height: 100px;
+    width: 100px;
+}
+.card-front,
+.card-back {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    transition: transform 1s;
+    backface-visibility: hidden;
+    text-align: center;
+}
+.card-back {
+    transform: rotateY(180deg);
+    user-select: none;
+}
+.card-front {
+    background-color: #A3CFCD;
+    text-transform: uppercase;
+}
+.card-front:hover {
+    background-color: #82A0AA;
+}
+.flipped .card-front {
+    transform: rotateY(180deg);
+}
+.flipped .card-back {
+    transform: rotateY(0);
+}
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    justify-content: center;
+    align-content: center;
+    row-gap: 5px;
+    column-gap: 5px;
+    margin: 20px;
+}
+#play-again {
+    border: solid #677381;
+    margin: 10px 0px 50px 0px;
+    padding: 10px;
+    background-color: #D9E5E0;
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 2px;
+    color: #4B4A54;
+}
+#play-again:hover {
+    background: #ffcdd2;
+}
+@keyframes wiggle {
+    0% { transform: rotate(0deg); }
+   80% { transform: rotate(0deg); }
+   85% { transform: rotate(5deg); }
+   95% { transform: rotate(-5deg); }
+  100% { transform: rotate(0deg); }
+}
+.wiggle {
+  animation: wiggle 1.5s;
+}
+#top, #bottom, #left, #right {
+	background: #A3CFCD;
+	position: fixed;
+	}
+	#left, #right {
+		top: 0; bottom: 0;
+		width: 15px;
+		}
+		#left { left: 0; }
+		#right { right: 0; }
+		
+	#top, #bottom {
+		left: 0; right: 0;
+		height: 15px;
+		}
+		#top { top: 0; }
+		#bottom { bottom: 0; }
