@@ -85,6 +85,15 @@ img {
     column-gap: 5px;
     margin: 20px;
 }
+.card-container-large {
+    display: grid;
+    grid-template-columns: repeat(6, auto);
+    justify-content: center;
+    align-content: center;
+    row-gap: 5px;
+    column-gap: 5px;
+    margin: 20px;
+}
 #play-again {
     border: solid #677381;
     margin: 10px 3px 50px 0px;
