@@ -69,7 +69,7 @@ function shuffleId(array) {
 };
 
 function setCards () {        
-    for (let i = 0; i < 16; i++) {
+    for (let i = 0; i < vars.cardImages.length; i++) {
         const img = document.createElement("img"); //create a new image div
         img.src = vars.cardImages[i]; //image source is an image from image array
         document.getElementById(i).appendChild(img); //add new image div to card parent
