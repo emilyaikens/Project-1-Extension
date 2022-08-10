@@ -108,8 +108,7 @@ domSelect.resetButton.addEventListener("click", function() { //reload game
 });
 
 function biggerBoard () {
-    //increase board size to 6x6
-    for (let i = 16; i < 37; i++) {
+    for (let i = 16; i < 37; i++) { //increase board size to 6x6
         let transcript = `
         <div class="card">
             <div class="card-back" id=${i}></div>
@@ -119,7 +118,9 @@ function biggerBoard () {
         let newCard = document.createElement(transcript);
         document.querySelector(".card-container").appendChild(newCard);
     }
-    //add 10 new images to card images array
+    let newImages = ["images/2.png", "images/5.png", "images/7.png", "images/9.png", "images/10.png", "images/13.png", "images/15.png", "images/16.png", "images/17.png","images/18.png",
+                    "images/2.png", "images/5.png", "images/7.png", "images/9.png", "images/10.png", "images/13.png", "images/15.png", "images/16.png", "images/17.png","images/18.png"];
+    vars.cardImages.push(newImages);//add 10 new images to card images array
     //update setCards array so that the iteration length is the length of cardImages array
     //update timer to 10 minutes
 };
