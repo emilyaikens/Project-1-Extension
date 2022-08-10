@@ -103,7 +103,7 @@ function playerWin(element) { //DOM updates to directions
     element.classList.add("wiggle"); // add class "wiggle" to the directions 
 };
 
-function biggerBoard () {
+//function biggerBoard () {
     for (let i = 16; i < 37; i++) { //increase board size to 6x6
         let transcript = `
         <div class="card">
@@ -118,7 +118,7 @@ function biggerBoard () {
                     "images/2.png", "images/5.png", "images/7.png", "images/9.png", "images/10.png", "images/13.png", "images/15.png", "images/16.png", "images/17.png","images/18.png"];
     vars.cardImages.push(newImages);//add 10 new images to card images array
     vars.min = 10; //update timer to 10 minutes
-};
+//};
 
 domSelect.resetButton.addEventListener("click", function() { //reload game with Play Again button
     location.reload();
