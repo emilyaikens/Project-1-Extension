@@ -87,7 +87,7 @@ img {
 }
 #play-again {
     border: solid #677381;
-    margin: 10px 0px 50px 0px;
+    margin: 10px 5px 50px 0px;
     padding: 10px;
     background-color: #D9E5E0;
     font-family: 'Oswald', sans-serif;
@@ -95,6 +95,18 @@ img {
     color: #4B4A54;
 }
 #play-again:hover {
+    background: #ffcdd2;
+}
+#harder {
+    border: solid #677381;
+    margin: 10px 0px 50px 5px;
+    padding: 10px;
+    background-color: #D9E5E0;
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 2px;
+    color: #4B4A54;
+}
+#harder:hover {
     background: #ffcdd2;
 }
 @keyframes wiggle {
