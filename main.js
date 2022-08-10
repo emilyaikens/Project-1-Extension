@@ -104,6 +104,7 @@ function playerWin(element) { //DOM updates to directions
 };
 
 //function biggerBoard () {
+    document.querySelector(".card-container").classList.add("card-container-large");
     for (let i = 16; i < 37; i++) { //increase board size to 6x6
         let transcript = `
         <div class="card">
