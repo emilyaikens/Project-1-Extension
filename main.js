@@ -117,18 +117,6 @@ function playerWin(element) { //DOM updates to directions
             newCard.appendChild(cardFront);
             document.querySelector(".card-container").appendChild(newCard);
     };
-    //let newId = 15;
-    //newId = newId +1;
-            // let cardBack = document.createElement("div");
-            //     cardBack.classList.add("card-back");
-            //     cardBack.setAttribute("id", "0");
-            //     document.querySelectorAll(".new-card").appendChild(cardBack);
-            // let cardFront = document.createElement("div");
-            //     cardFront.classList.add("card-front");
-            //     document.querySelectorAll(".card.new-card").append(cardFront, cardBack); 
-    
-      document.querySelectorAll(".new-card").innerHTML = "trial";      
-
     
     let newImages = ["images/2.png", "images/5.png", "images/7.png", "images/9.png", "images/10.png", "images/13.png", "images/15.png", "images/16.png", "images/17.png","images/18.png",
                     "images/2.png", "images/5.png", "images/7.png", "images/9.png", "images/10.png", "images/13.png", "images/15.png", "images/16.png", "images/17.png","images/18.png"];
