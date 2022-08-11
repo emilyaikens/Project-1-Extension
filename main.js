@@ -21,24 +21,6 @@ const domSelect = {
 shuffleId(vars.cardImages);
 setCards();
 
-domSelect.cards.forEach(function(card) { //for each card with the card class...
-    card.addEventListener('click', function clickCard() { //on click
-        if ((vars.curCards.includes(card.firstElementChild.id) === false) && //everything under this line only happens if the card hasn't already been clicked
-                (vars.curCards.length < 2)) { //debug: now user can't click more than two cards at a time
-            card.classList.toggle('flipped');  //flip cards by adding/removing flipped clss
-            vars.clicks = vars.clicks + 1 //count clicks (clicks +1)
-            vars.curCards.push(card.firstElementChild.id); //push id of clicked card into curCards array ********
-            if (vars.clicks % 2 === 0) { //if clicks %2 set secondSelect
-                vars.secondSelect = card.firstElementChild.innerHTML; //assign image to secondSelect
-                checkMatch();
-            } else {
-                vars.firstSelect = card.firstElementChild.innerHTML; //assign image to firstSelect
-            };
-            if (vars.clicks === 1) {gameTimer()}; //if clicks === 1, start timer
-        };
-    });
-});
-
 function checkMatch () {
     if (vars.firstSelect === vars.secondSelect) { //if the images are the same...
         vars.matches = vars.matches + 1; //...add a match
@@ -121,7 +103,27 @@ function playerWin(element) { //DOM updates to directions
                     "images/2.png", "images/5.png", "images/7.png", "images/9.png", "images/10.png", "images/13.png", "images/15.png", "images/16.png", "images/17.png","images/18.png"];
     vars.cardImages.push(newImages);//add 10 new images to card images array
     vars.min = 10; //update timer to 10 minutes
+    domSelect.timer.innerHTML = ("Time Left: 10:00"); //update dom timer display to 10 min
 //};
+
+domSelect.cards.forEach(function(card) { //for each card with the card class...
+    card.addEventListener('click', function clickCard() { //on click
+        console.log("click");
+        if ((vars.curCards.includes(card.firstElementChild.id) === false) && //everything under this line only happens if the card hasn't already been clicked
+                (vars.curCards.length < 2)) { //debug: now user can't click more than two cards at a time
+            card.classList.toggle('flipped');  //flip cards by adding/removing flipped clss
+            vars.clicks = vars.clicks + 1 //count clicks (clicks +1)
+            vars.curCards.push(card.firstElementChild.id); //push id of clicked card into curCards array ********
+            if (vars.clicks % 2 === 0) { //if clicks %2 set secondSelect
+                vars.secondSelect = card.firstElementChild.innerHTML; //assign image to secondSelect
+                checkMatch();
+            } else {
+                vars.firstSelect = card.firstElementChild.innerHTML; //assign image to firstSelect
+            };
+            if (vars.clicks === 1) {gameTimer()}; //if clicks === 1, start timer
+        };
+    });
+});
 
 domSelect.resetButton.addEventListener("click", function() { //reload game with Play Again button
     location.reload();
