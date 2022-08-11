@@ -18,8 +18,6 @@ const domSelect = {
     resetButton: document.getElementById("play-again") //reset button at bottom of page
 };
 
-
-shuffleId(vars.cardImages);
 setCards();
 
 function checkMatch () {
@@ -104,6 +102,8 @@ function playerWin(element) { //DOM updates to directions
     let newImages = ["images/2.png", "images/5.png", "images/7.png", "images/9.png", "images/10.png", "images/13.png", "images/15.png", "images/16.png", "images/17.png","images/18.png",
                     "images/2.png", "images/5.png", "images/7.png", "images/9.png", "images/10.png", "images/13.png", "images/15.png", "images/16.png", "images/17.png","images/18.png"];
     newImages.forEach(function(image) {vars.cardImages.push(image)});//add 10 new images to card images array
+    shuffleId(vars.cardImages);
+    
     vars.min = 10; //update timer to 10 minutes
     domSelect.timer.innerHTML = ("Time Left: 10:00"); //update dom timer display to 10 min
 
