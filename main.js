@@ -108,9 +108,6 @@ function biggerBoard() {
     shuffleId(vars.cardImages);
     setCards();
 
-    
-
-
 domSelect.cards.forEach(function(card) { //for each card with the card class...
     flipCard(card);
 });
