@@ -104,20 +104,19 @@ function playerWin(element) { //DOM updates to directions
 };
 
 //function biggerBoard () {
-    document.querySelector(".card-container").classList.add("card-container-large");
-    for (let i = 16; i < 36; i++) { //increase board size to 6x6
-        const newCard = document.createElement("div");
-            newCard.classList.add("card");
-        const cardBack = document.createElement("div");
-            cardBack.classList.add("card-back");
-            cardBack.setAttribute("id", i);
-        const cardFront = document.createElement("div");
-            cardFront.classList.add("card-front");
-            newCard.appendChild(cardBack);
-            newCard.appendChild(cardFront);
-            document.querySelector(".card-container").appendChild(newCard);
+    document.querySelector(".card-container").classList.add("card-container-large"); //increase board size to 6x6
+    for (let i = 16; i < 36; i++) { //for loop, not starting at 0 bc need ids to start after the existing ids (16)
+        const newCard = document.createElement("div"); //create new card
+            newCard.classList.add("card"); //give new cards the card class
+        const cardBack = document.createElement("div"); //create a div
+            cardBack.classList.add("card-back"); //give the new div a card-back class
+            cardBack.setAttribute("id", i); //give the new div a new id
+        const cardFront = document.createElement("div"); //create a div
+            cardFront.classList.add("card-front"); //give the new div a card-front class
+            newCard.appendChild(cardBack); //put card back in the card div
+            newCard.appendChild(cardFront); //put the card front in the card div
+            document.querySelector(".card-container").appendChild(newCard); //put the card in the card container div
     };
-    
     let newImages = ["images/2.png", "images/5.png", "images/7.png", "images/9.png", "images/10.png", "images/13.png", "images/15.png", "images/16.png", "images/17.png","images/18.png",
                     "images/2.png", "images/5.png", "images/7.png", "images/9.png", "images/10.png", "images/13.png", "images/15.png", "images/16.png", "images/17.png","images/18.png"];
     vars.cardImages.push(newImages);//add 10 new images to card images array
