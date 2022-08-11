@@ -82,7 +82,8 @@ function playerWin(element) { //DOM updates to directions
     element.style.textTransform = "uppercase";
     element.classList.add("wiggle"); // add class "wiggle" to the directions 
 };
-//BIGGERBOARD
+
+function biggerBoard() {
     document.querySelector(".card-container").classList.add("card-container-large"); //increase board size to 6x6
     for (let i = 16; i < 36; i++) { //for loop, not starting at 0 bc need ids to start after the existing ids (16)
         const newCard = document.createElement("div"); //create new card
@@ -100,12 +101,14 @@ function playerWin(element) { //DOM updates to directions
     let newImages = ["images/2.png", "images/5.png", "images/7.png", "images/9.png", "images/10.png", "images/13.png", "images/15.png", "images/16.png", "images/17.png","images/18.png",
                     "images/2.png", "images/5.png", "images/7.png", "images/9.png", "images/10.png", "images/13.png", "images/15.png", "images/16.png", "images/17.png","images/18.png"];
     newImages.forEach(function(image) {vars.cardImages.push(image)});//add 10 new images to card images array
-//BIGGERBOARD END    
+    vars.min = 10; //update timer to 10 minutes
+    domSelect.timer.innerHTML = ("Time Left: 10:00"); //update dom timer display to 10 min
+};  
+
     shuffleId(vars.cardImages);
     setCards();
 
-    vars.min = 10; //update timer to 10 minutes
-    domSelect.timer.innerHTML = ("Time Left: 10:00"); //update dom timer display to 10 min
+    
 
 
 domSelect.cards.forEach(function(card) { //for each card with the card class...
