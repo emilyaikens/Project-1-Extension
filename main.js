@@ -111,13 +111,11 @@ function playerWin(element) { //DOM updates to directions
             newCard.classList.add("new-card");
             document.querySelector(".card-container").appendChild(newCard);
     };
-    let newId = 15;
-
-
-            newId = newId +1;
+    //let newId = 15;
+    //newId = newId +1;
             let cardBack = document.createElement("div");
                 cardBack.classList.add("card-back");
-                cardBack.setAttribute("id", newId);
+                cardBack.setAttribute("id", "0");
                 document.querySelectorAll(".new-card").appendChild(cardBack);
             let cardFront = document.createElement("div");
                 cardFront.classList.add("card-front");
