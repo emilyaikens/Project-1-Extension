@@ -47,8 +47,7 @@ function shuffleId(array) {
         [array[currentId], array[randomId]] = [ //swap current array for random array
         array[randomId], array[currentId]];
     }
-    //return array;
-    console.log(array);
+    return array;
 };
 
 function setCards () {        
@@ -115,7 +114,6 @@ domSelect.cards.forEach(function(card) { //for each card with the card class...
 });
 function flipCard(card) {
     card.addEventListener('click', function clickCard() { //on click
-        console.log("click");
         if ((vars.curCards.includes(card.firstElementChild.id) === false) && //everything under this line only happens if the card hasn't already been clicked
                 (vars.curCards.length < 2)) { //debug: now user can't click more than two cards at a time
             card.classList.toggle('flipped');  //flip cards by adding/removing flipped clss
@@ -137,6 +135,7 @@ domSelect.resetButton.addEventListener("click", function() { //reload game with 
 });
 
 document.getElementById("harder").addEventListener("click", function () { //increase board size with Play Harder button
-    //location.reload();
-    biggerBoard();
+    if (vars.cardImages.length < 20) {
+        biggerBoard();
+    }
 });
