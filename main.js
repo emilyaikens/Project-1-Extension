@@ -135,5 +135,6 @@ domSelect.resetButton.addEventListener("click", function() { //reload game with 
 });
 
 document.getElementById("harder").addEventListener("click", function () { //increase board size with Play Harder button
+    location.reload();
     biggerBoard();
 });
