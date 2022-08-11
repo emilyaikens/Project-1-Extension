@@ -18,6 +18,9 @@ const domSelect = {
     resetButton: document.getElementById("play-again") //reset button at bottom of page
 };
 
+    shuffleId(vars.cardImages);
+    setCards();
+
 function checkMatch () {
     if (vars.firstSelect === vars.secondSelect) { //if the images are the same...
         vars.matches = vars.matches + 1; //...add a match
@@ -103,10 +106,9 @@ function biggerBoard() {
     newImages.forEach(function(image) {vars.cardImages.push(image)});//add 10 new images to card images array
     vars.min = 10; //update timer to 10 minutes
     domSelect.timer.innerHTML = ("Time Left: 10:00"); //update dom timer display to 10 min
-};  
-
     shuffleId(vars.cardImages);
     setCards();
+};  
 
 domSelect.cards.forEach(function(card) { //for each card with the card class...
     flipCard(card);
@@ -135,6 +137,6 @@ domSelect.resetButton.addEventListener("click", function() { //reload game with 
 });
 
 document.getElementById("harder").addEventListener("click", function () { //increase board size with Play Harder button
-    location.reload();
+    //location.reload();
     biggerBoard();
 });
