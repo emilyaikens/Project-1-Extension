@@ -108,23 +108,21 @@ function playerWin(element) { //DOM updates to directions
     for (let i = 0; i < 20; i++) { //increase board size to 6x6
         let newCard = document.createElement("div");
             newCard.classList.add("card");
+            newCard.classList.add("new-card");
             document.querySelector(".card-container").appendChild(newCard);
     };
     let newId = 15;
-    domSelect.cards.forEach(function(card) {
-        //if (card.hasChildNodes === false) {
-        newId = newId +1;
-        let cardBack = document.createElement("div");
-            cardBack.classList.add("card-back");
-            cardBack.setAttribute("id", newId);
-            document.querySelector(".card").appendChild(cardBack);
-        let cardFront = document.createElement("div");
-            cardFront.classList.add("card-front");
-            document.querySelector(".card").appendChild(cardFront);
-        //};   
-    });  
-           
-        
+
+
+            newId = newId +1;
+            let cardBack = document.createElement("div");
+                cardBack.classList.add("card-back");
+                cardBack.setAttribute("id", newId);
+                document.querySelectorAll(".new-card").appendChild(cardBack);
+            let cardFront = document.createElement("div");
+                cardFront.classList.add("card-front");
+                document.querySelector(".new-card").appendChild(cardFront); 
+            
 
     console.log(domSelect.cards);
     let newImages = ["images/2.png", "images/5.png", "images/7.png", "images/9.png", "images/10.png", "images/13.png", "images/15.png", "images/16.png", "images/17.png","images/18.png",
