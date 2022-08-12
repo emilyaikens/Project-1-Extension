@@ -14,7 +14,8 @@ const domSelect = {
     timer: document.getElementById("time-left"), //time left, in scoreboard
     matches: document.getElementById("matches"), //matches, also in scoreboard
     directions: document.getElementById("directions"), //this is the text directly above the board
-    resetButton: document.getElementById("play-again") //reset button at bottom of page
+    easyButton: document.getElementById("easy"), //play easy button at bottom of page
+    harderButton: document.getElementById("harder")
 };
 
 function checkMatch () {
@@ -77,7 +78,7 @@ function playerWin(element) { //DOM updates to directions
     element.classList.add("wiggle"); // add class "wiggle" to the directions 
 };
 
-//BIGGERBOARD
+function biggerBoard() {
     document.querySelector(".card-container").classList.add("card-container-large"); //increase board size to 6x6
     for (let i = 16; i < 36; i++) { //for loop, not starting at 0 bc need ids to start after the existing ids (16)
         const newCard = document.createElement("div"); //create new card
@@ -91,17 +92,17 @@ function playerWin(element) { //DOM updates to directions
             newCard.appendChild(cardFront); //put the card front in the card div
             document.querySelector(".card-container").appendChild(newCard); //put the card in the card container div   
             flipCard(newCard); 
+            vars.min = 10; //update timer to 10 minutes
+            domSelect.timer.innerHTML = ("Time Left: 10:00"); //update dom timer display to 10 min
     };
     let newImages = ["images/2.png", "images/5.png", "images/7.png", "images/9.png", "images/10.png", "images/13.png", "images/15.png", "images/16.png", "images/17.png","images/18.png",
                     "images/2.png", "images/5.png", "images/7.png", "images/9.png", "images/10.png", "images/13.png", "images/15.png", "images/16.png", "images/17.png","images/18.png"];
     newImages.forEach(function(image) {vars.cardImages.push(image)});//add 10 new images to card images array
-//BIGGERBOARD END   
+    changeButton();
+};
 
     shuffleId(vars.cardImages);
     setCards();
-
-    vars.min = 10; //update timer to 10 minutes
-    domSelect.timer.innerHTML = ("Time Left: 10:00"); //update dom timer display to 10 min
 
     domSelect.cards.forEach(function(card) { //for each card with the card class...
         flipCard(card);
@@ -124,9 +125,19 @@ function flipCard(card) {
         };
     });
 };
-domSelect.resetButton.addEventListener("click", function() { //reload game with Play Again button
+
+function changeButton () {
+    domSelect.harderButton.innerHTML = "Play Again";
+    domSelect.harderButton.setAttribute("id", "again")
+}
+
+domSelect.easyButton.addEventListener("click", function() { //reload game with Play Again button
     location.reload();
 });
-document.getElementById("harder").addEventListener("click", function () { //increase board size with Play Harder button
-    biggerBoard();
+domSelect.harderButton.addEventListener("click", function () { //increase board size with Play Harder button
+    biggerBoard(); 
 });
+
+// document.getElementById("again").addEventListener("click", function() {
+    
+// });

@@ -94,7 +94,7 @@ img {
     column-gap: 5px;
     margin: 20px;
 }
-#play-again {
+#easy {
     border: solid #677381;
     margin: 10px 3px 50px 0px;
     padding: 10px;
@@ -103,7 +103,7 @@ img {
     letter-spacing: 2px;
     color: #4B4A54;
 }
-#play-again:hover {
+#easy:hover {
     background: #ffcdd2;
 }
 #harder {
@@ -116,6 +116,18 @@ img {
     color: #4B4A54;
 }
 #harder:hover {
+    background: #ffcdd2;
+}
+#again {
+    border: solid #677381;
+    margin: 10px 3px 50px 0px;
+    padding: 10px;
+    background-color: #D9E5E0;
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 2px;
+    color: #4B4A54;
+}
+#again:hover {
     background: #ffcdd2;
 }
 @keyframes wiggle {
