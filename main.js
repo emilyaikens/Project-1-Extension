@@ -98,9 +98,7 @@ function biggerBoard() {
     let newImages = ["images/2.png", "images/5.png", "images/7.png", "images/9.png", "images/10.png", "images/13.png", "images/15.png", "images/16.png", "images/17.png","images/18.png",
                     "images/2.png", "images/5.png", "images/7.png", "images/9.png", "images/10.png", "images/13.png", "images/15.png", "images/16.png", "images/17.png","images/18.png"];
     newImages.forEach(function(image) {vars.cardImages.push(image)});//add 10 new images to card images array
-    changeButton();
 };
-
     shuffleId(vars.cardImages);
     setCards();
 
@@ -128,14 +126,19 @@ function flipCard(card) {
 
 function changeButton () {
     domSelect.harderButton.innerHTML = "Play Again";
-    domSelect.harderButton.setAttribute("id", "again")
+    domSelect.easyButton.innerHTML = "Play Easy";
 }
 
 domSelect.easyButton.addEventListener("click", function() { //reload game with Play Again button
     location.reload();
 });
 domSelect.harderButton.addEventListener("click", function () { //increase board size with Play Harder button
-    biggerBoard(); 
+    changeButton();
+    if (vars.cardImages.length > 16) {
+        biggerBoard(); 
+    } else {
+        biggerBoard();
+    }    
 });
 
 // document.getElementById("again").addEventListener("click", function() {
