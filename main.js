@@ -18,8 +18,10 @@ const domSelect = {
     resetButton: document.getElementById("play-again") //reset button at bottom of page
 };
 
+if (vars.cardImages.length = 16) {
     shuffleId(vars.cardImages);
     setCards();
+};
 
 function checkMatch () {
     if (vars.firstSelect === vars.secondSelect) { //if the images are the same...
@@ -35,6 +37,7 @@ function checkMatch () {
     };
     vars.firstSelect = "null"; // reset firstSelect and secondSelect to "null"
     vars.secondSelect = "null";
+    console.log(vars.curCards);
     setTimeout(function(){vars.curCards = []}, 1501); //clears current card array after timed flip executes
 };
 
@@ -98,7 +101,7 @@ function biggerBoard() {
             newCard.appendChild(cardBack); //put card back in the card div
             newCard.appendChild(cardFront); //put the card front in the card div
             document.querySelector(".card-container").appendChild(newCard); //put the card in the card container div
-        flipCard(newCard);
+            flipCard(newCard);
     };
     let newImages = ["images/2.png", "images/5.png", "images/7.png", "images/9.png", "images/10.png", "images/13.png", "images/15.png", "images/16.png", "images/17.png","images/18.png",
                     "images/2.png", "images/5.png", "images/7.png", "images/9.png", "images/10.png", "images/13.png", "images/15.png", "images/16.png", "images/17.png","images/18.png"];
