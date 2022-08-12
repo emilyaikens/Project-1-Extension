@@ -5,8 +5,9 @@ let vars = {
     matches: 0, //counts total matches throughout the game
     curCards: [], //used to log the innerHTML of the cards, two at a time
     min: 5, //how many minutes of game play
-    cardImages: ["images/1.png", "images/3.png", "images/4.png", "images/6.png", "images/8.png", "images/11.png", "images/12.png", "images/14.png", 
-                "images/1.png", "images/3.png", "images/4.png", "images/6.png", "images/8.png", "images/11.png", "images/12.png", "images/14.png"]
+    cardImages: ["images/1.png", "images/2.png", "images/3.png", "images/4.png", "images/5.png", "images/6.png", "images/7.png", "images/8.png"],
+    lgCardImages: ["images/1.png", "images/2.png", "images/3.png", "images/4.png", "images/5.png", "images/6.png", "images/7.png", "images/8.png", "images/9.png", 
+                "images/10.png", "images/11.png", "images/12.png", "images/13.png", "images/14.png", "images/15.png", "images/16.png", "images/17.png", "images/18"]
 };
 
 const domSelect = {
@@ -102,7 +103,16 @@ function playerWin(element) { //DOM updates to directions
     element.classList.add("wiggle"); // add class "wiggle" to the directions 
 };
 
+biggerBoard () {
+    for (i=16; i<37; i++) {
+        let newCard = document.getElementById(i);
+        newCard.classList.new("card");
+    }
+    shuffleId(vars.lgCardImages);
+}
+
 domSelect.resetButton.addEventListener("click", function() { //reload game
     location.reload();
 });
 
+document.getElementById("harder").addEventListener("click", biggerBoard());
