@@ -17,10 +17,9 @@ const domSelect = {
     resetButton: document.getElementById("play-again") //reset button at bottom of page
 };
 
-setCards();
-
 function checkMatch () {
-    if (vars.firstSelect === vars.secondSelect) { //if the images are the same...
+    console.log("start match firstSelect: " + vars.firstSelect + "second select: " + vars.secondSelect);
+    if (vars.firstSelect.includes(vars.secondSelect)) { //if the images are the same...
         vars.matches = vars.matches + 1; //...add a match
         domSelect.matches.innerHTML = ("Matches: " + vars.matches); //update screen to show matches
     } else {
@@ -92,8 +91,8 @@ function playerWin(element) { //DOM updates to directions
             cardFront.classList.add("card-front"); //give the new div a card-front class
             newCard.appendChild(cardBack); //put card back in the card div
             newCard.appendChild(cardFront); //put the card front in the card div
-            document.querySelector(".card-container").appendChild(newCard); //put the card in the card container div
-        flipCard(newCard);
+            document.querySelector(".card-container").appendChild(newCard); //put the card in the card container div   
+            flipCard(newCard); 
     };
     let newImages = ["images/2.png", "images/5.png", "images/7.png", "images/9.png", "images/10.png", "images/13.png", "images/15.png", "images/16.png", "images/17.png","images/18.png",
                     "images/2.png", "images/5.png", "images/7.png", "images/9.png", "images/10.png", "images/13.png", "images/15.png", "images/16.png", "images/17.png","images/18.png"];
@@ -106,12 +105,12 @@ function playerWin(element) { //DOM updates to directions
     vars.min = 10; //update timer to 10 minutes
     domSelect.timer.innerHTML = ("Time Left: 10:00"); //update dom timer display to 10 min
 
-domSelect.cards.forEach(function(card) { //for each card with the card class...
-    flipCard(card);
-});
+    domSelect.cards.forEach(function(card) { //for each card with the card class...
+        flipCard(card);
+    });
+
 function flipCard(card) {
     card.addEventListener('click', function clickCard() { //on click
-        console.log("click");
         if ((vars.curCards.includes(card.firstElementChild.id) === false) && //everything under this line only happens if the card hasn't already been clicked
                 (vars.curCards.length < 2)) { //debug: now user can't click more than two cards at a time
             card.classList.toggle('flipped');  //flip cards by adding/removing flipped clss
